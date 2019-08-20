@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <classPathEntry location="./mysql-connector-java-5.1.38.jar"/>
+
+    <context id="context" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <jdbcConnection
+                connectionURL="jdbc:mysql://120.78.203.246:3306/midu_store?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false"
+                driverClass="com.mysql.jdbc.Driver" password="LiaNTonGtestTOkeNcaT10" userId="root"/>
+
+        <!--<javaModelGenerator targetPackage="com.seasun.management.model" targetProject="./others">-->
+        <javaModelGenerator targetPackage="com.midu.store.account.model.entity" targetProject="../store-account-model/src/main/java">
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!--<sqlMapGenerator targetPackage="mapping" targetProject="./others" />-->
+        <sqlMapGenerator targetPackage="mapping" targetProject="../store-account-dao/src/main/resources"/>
+
+        <!--<javaClientGenerator targetPackage="com.seasun.management.mapping" targetProject="./others" type="MIXEDMAPPER" />-->
+        <javaClientGenerator targetPackage="com.midu.store.account.dao" targetProject="../store-account-dao/src/main/java"
+                             type="MIXEDMAPPER"/>
+
+
+		<table tableName="account_info" domainObjectName="AccountInfo"
+               enableSelectByExample="false"
+               enableDeleteByExample="false"
+               enableCountByExample="false"
+               enableUpdateByExample="false">
+			<!-- <generatedKey column="name" identity="true" sqlStatement="Mysql"/> -->
+			<columnOverride column="is_member" javaType="int"/>
+
+        </table>
+	
+    </context>
+</generatorConfiguration>
+
+<!--  java -jar mybatis-generator-core-1.3.5.jar -configfile ./generatorConfig.xml -overwrite   -->
+
+
+        <!--<columnOverride column="process_result" javaType="Integer" jdbcType="TINYINT" />-->
+        <!--official-doc: http://mbg.cndocs.tk/configreference-->

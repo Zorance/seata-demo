@@ -1,0 +1,24 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.olaa</groupId>
+        <artifactId>avatar-open-user</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <artifactId>avatar-open-user-service</artifactId>
+
+    <dependencies>
+        <!-- avatar-open-user-dao -->
+        <dependency>
+            <groupId>com.olaa</groupId>
+            <artifactId>avatar-open-user-dao</artifactId>
+        </dependency>
+		<!-- avatar-open-user-api -->
+        <dependency>
+            <groupId>com.olaa</groupId>
+            <artifactId>avatar-open-user-api</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>

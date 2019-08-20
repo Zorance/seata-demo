@@ -1,0 +1,33 @@
+server:
+  port: 7100
+
+nacos:
+  server-addr: localhost:8848                    # nacos注册地址
+  namespace:                 # 命名空间ID
+
+dubbo:
+  registry:
+    address: spring-cloud://127.0.0.1
+  scan:
+    base-packages: com.olaa.avatar.open.*.provider.rpc     # dubbo服务实现类扫描包
+  protocol:
+    name: dubbo                                      # dubbo协议
+    port: -1                                         # 端口递增，20880开始
+
+spring:
+  profiles:
+    active: public
+  application:
+    name: avatar-open-account
+  cloud: 
+    nacos:
+      discovery:                                     # 注册中心
+        server-addr: ${nacos.server-addr}
+      config:                                        # 配置中心
+        prefix: ${spring.application.name}
+        server-addr: ${nacos.server-addr}
+        namespace: ${nacos.namespace}
+        shared-dataids: common.yaml                   # 公共配置
+        ext-config[0]:                               # 以下为扩展配置
+          dataId: db.yaml
+          refresh: true

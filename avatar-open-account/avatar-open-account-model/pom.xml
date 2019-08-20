@@ -1,0 +1,41 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+<!--   <parent> -->
+<!--   	<groupId>com.olaa</groupId> -->
+<!--     <artifactId>avatar-open-account</artifactId> -->
+<!--     <version>0.0.1-SNAPSHOT</version> -->
+<!--   </parent> -->
+  <groupId>com.olaa</groupId>
+  <artifactId>avatar-open-account-model</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  
+  <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <avatar-open-common.version>0.0.1-SNAPSHOT</avatar-open-common.version>
+  </properties>
+    
+  <dependencies>
+        <!-- avator-open-common -->
+        <dependency>
+            <groupId>com.olaa</groupId>
+            <artifactId>avatar-open-common</artifactId>
+            <version>${avatar-open-common.version}</version>
+        </dependency>
+  </dependencies>
+  
+  <distributionManagement>
+        <repository>
+            <id>nexus</id>
+            <name>releases</name>
+            <url>http://120.78.203.246:18081/repository/maven-releases/</url>
+            <uniqueVersion>true</uniqueVersion>
+        </repository>
+        <snapshotRepository>
+            <id>nexus</id>
+            <name>snapshots</name>
+            <url>http://120.78.203.246:18081/repository/maven-snapshots/</url>
+        </snapshotRepository>
+   </distributionManagement>
+  
+</project>
